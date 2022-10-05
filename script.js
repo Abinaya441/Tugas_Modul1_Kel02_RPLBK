@@ -1294,11 +1294,60 @@ const array = [{
   hobi: "olahraga"
 }];
 
-const checkOnKeyUp = () => {
-  const dataaegis = array.filter(aegis => {
-    return aegis.nama_lengkap.toLowerCase().include(inputDTO.toLowerCase())
-  });
-  console.log(inputDTO.dataaegis);
-}
+const search = document.getElementById("inputval");
+let namaLengkap = document.querySelector("#namaLengkap");
+let namaPanggilan = document.querySelector("#namaPanggilan");
+let noTel = document.querySelector("#noTel");
+let lineId = document.querySelector("#lineId");
+let tanggalLahir = document.querySelector("#tanggalLahir");
+let nim = document.querySelector("#nim");
+let eMail = document.querySelector("#eMail");
+let hobi = document.querySelector("#hobi");
+let judul = document.querySelector("#judul");
 
-//intinya saya bingung kalau onkeyup enakan onclick momen
+search.addEventListener("keyup", (e) => {
+  const searchString = e.target.value.toLowerCase();
+  var filteredDat = array.filter((s) => {
+    return s.nim.toString() === searchString.toString();
+  });
+  console.log(filteredDat);
+  if (filteredDat) {
+    judul.innerHTML = _.pluck(filteredDat, "nama_lengkap");
+    namaLengkap.innerHTML =
+      "Nama Lengkap   :   " + _.pluck(filteredDat, "nama_lengkap");
+    namaPanggilan.innerHTML =
+      "Nama Panggilan :   " + _.pluck(filteredDat, "nama_panggilan");
+    noTel.innerHTML =
+      "Nomor Telepon  :   " + _.pluck(filteredDat, "nomor_telepon");
+    lineId.innerHTML = "ID Line        :   " + _.pluck(filteredDat, "id_line");
+    tanggalLahir.innerHTML =
+      "Tanggal Lahir  :   " + _.pluck(filteredDat, "tanggal_lahir");
+    nim.innerHTML = "NIM            :   " + _.pluck(filteredDat, "nim");
+    eMail.innerHTML = "Email          :   " + _.pluck(filteredDat, "email");
+    hobi.innerHTML = "Hobi           :   " + _.pluck(filteredDat, "hobi");
+  } else{
+    namaLengkap.innerHTML = "Error 404 Not Found";
+  }
+});
+
+// const checkOnKeyUp = () => {
+//   const dataAegis = array.filter(aegis => {
+//     return aegis.nama_lengkap.toLowerCase().include(inputDTO.toLowerCase())
+//   });
+//   console.log(inputDTO.dataaegis);
+// }
+
+// // Fungsi yang dijalankan saat input berubah
+const checkOnKeyUp = (inputDTO) => {
+  // Memfilter obyek dari array Data Aegis
+  const dataAegis = array.filter(anggota => anggota.nim.toString() === inputDTO.value.toString());
+// Mengeluarkan obyek yang telah di filter ke console
+console.log(dataAegis);
+}
+// //intinya saya bingung kalau onkeyup enakan onclick momen
+// // let judulnama = filterjudul;
+// const parseJudul = JSON.parse(JSON.stringify(filterjudul));
+// // const judulfil = JSON.parse(parseJudul);
+// juduls.innerHTML = parseJudul.nama_lengkap;
+// const parseJson = JSON.stringify(filterdata);
+// aegis2.innerHTML = parseJson;
