@@ -1334,6 +1334,14 @@ search.addEventListener("keyup", (e) => {
   else
   {
     judul.innerHTML = "Data Tidak Ditemukan!";
+    namaLengkap.innerHTML ="";
+    namaPanggilan.innerHTML ="";
+    noTel.innerHTML ="";
+    lineId.innerHTML = "";
+    tanggalLahir.innerHTML ="";
+    nim.innerHTML = "";
+    eMail.innerHTML = "";
+    hobi.innerHTML = "";
   }
 });
 
