@@ -1304,7 +1304,6 @@ let nim = document.querySelector("#nim");
 let eMail = document.querySelector("#eMail");
 let hobi = document.querySelector("#hobi");
 let judul = document.querySelector("#judul");
-let pesan = document.querySelector("#pesan");
 
 search.addEventListener("keyup", (e) => {
   const searchString = e.target.value.toLowerCase();
@@ -1334,7 +1333,7 @@ search.addEventListener("keyup", (e) => {
   
   else
   {
-    pesan.innerHTML = "Data Tidak Ditemukan!";
+    judul.innerHTML = "Data Tidak Ditemukan!";
   }
 });
 
