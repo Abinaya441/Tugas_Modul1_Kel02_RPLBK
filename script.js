@@ -1307,11 +1307,15 @@ let judul = document.querySelector("#judul");
 
 search.addEventListener("keyup", (e) => {
   const searchString = e.target.value.toLowerCase();
-  var filteredDat = array.filter((s) => {
+  var filteredDat = array.filter((s) => 
+  {
     return s.nim.toString() === searchString.toString();
   });
+
   console.log(filteredDat);
-  if (filteredDat) {
+
+  if (filteredDat) 
+  {
     judul.innerHTML = _.pluck(filteredDat, "nama_lengkap");
     namaLengkap.innerHTML =
       "Nama Lengkap   :   " + _.pluck(filteredDat, "nama_lengkap");
@@ -1325,8 +1329,11 @@ search.addEventListener("keyup", (e) => {
     nim.innerHTML = "NIM            :   " + _.pluck(filteredDat, "nim");
     eMail.innerHTML = "Email          :   " + _.pluck(filteredDat, "email");
     hobi.innerHTML = "Hobi           :   " + _.pluck(filteredDat, "hobi");
-  } else{
-    namaLengkap.innerHTML = "Error 404 Not Found";
+  } 
+  
+  else
+  {
+    judul.innerHTML = "Error 404 Not Found";
   }
 });
 
