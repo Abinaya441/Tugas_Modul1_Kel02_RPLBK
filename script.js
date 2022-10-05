@@ -1314,7 +1314,7 @@ search.addEventListener("keyup", (e) => {
 
   console.log(filteredDat);
 
-  if (filteredDat) 
+  if (filteredDat.length) 
   {
     judul.innerHTML = _.pluck(filteredDat, "nama_lengkap");
     namaLengkap.innerHTML =
@@ -1328,12 +1328,20 @@ search.addEventListener("keyup", (e) => {
       "Tanggal Lahir  :   " + _.pluck(filteredDat, "tanggal_lahir");
     nim.innerHTML = "NIM            :   " + _.pluck(filteredDat, "nim");
     eMail.innerHTML = "Email          :   " + _.pluck(filteredDat, "email");
-    hobi.innerHTML = "Hobi           :   " + _.pluck(filteredDat, "hobi");
+    hobi.innerHTML = "Hobi           :   " + _   .pluck(filteredDat, "hobi");
   } 
   
   else
   {
-    judul.innerHTML = "Error 404 Not Found";
+    judul.innerHTML = "404 Rak Ketemu";
+    namaLengkap.innerHTML = "";
+    namaPanggilan.innerHTML = "";
+    noTel.innerHTML = "";
+    lineId.innerHTML = "";
+    tanggalLahir.innerHTML = "";
+    nim.innerHTML = "";
+    eMail.innerHTML = "";
+    hobi.innerHTML = "";
   }
 });
 
