@@ -1304,6 +1304,7 @@ let nim = document.querySelector("#nim");
 let eMail = document.querySelector("#eMail");
 let hobi = document.querySelector("#hobi");
 let judul = document.querySelector("#judul");
+let pesan = document.querySelector("#pesan");
 
 search.addEventListener("keyup", (e) => {
   const searchString = e.target.value.toLowerCase();
@@ -1316,6 +1317,7 @@ search.addEventListener("keyup", (e) => {
 
   if (filteredDat.length) 
   {
+    pesan.innerHTML = "";
     judul.innerHTML = _.pluck(filteredDat, "nama_lengkap");
     namaLengkap.innerHTML =
       "Nama Lengkap   :   " + _.pluck(filteredDat, "nama_lengkap");
@@ -1333,7 +1335,8 @@ search.addEventListener("keyup", (e) => {
   
   else
   {
-    judul.innerHTML = "Data Tidak Ditemukan!";
+    pesan.innerHTML = "Data Tidak Ditemukan!";
+    judul.innerHTML = "";
     namaLengkap.innerHTML ="";
     namaPanggilan.innerHTML ="";
     noTel.innerHTML ="";
