@@ -1304,6 +1304,7 @@ let nim = document.querySelector("#nim");
 let eMail = document.querySelector("#eMail");
 let hobi = document.querySelector("#hobi");
 let judul = document.querySelector("#judul");
+let pesan = document.querySelector("#pesan");
 
 search.addEventListener("keyup", (e) => {
   const searchString = e.target.value.toLowerCase();
@@ -1333,15 +1334,7 @@ search.addEventListener("keyup", (e) => {
   
   else
   {
-    judul.innerHTML = "404 Rak Ketemu";
-    namaLengkap.innerHTML = "";
-    namaPanggilan.innerHTML = "";
-    noTel.innerHTML = "";
-    lineId.innerHTML = "";
-    tanggalLahir.innerHTML = "";
-    nim.innerHTML = "";
-    eMail.innerHTML = "";
-    hobi.innerHTML = "";
+    pesan.innerHTML = "Data Tidak Ditemukan!";
   }
 });
 
